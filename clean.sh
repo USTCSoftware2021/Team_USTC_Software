@@ -11,3 +11,4 @@ systemctl stop redis.service
 
 rm /etc/nginx/sites-avaliable/cat /etc/nginx/sites-enabled/cat
 rm /etc/systemd/system/gunicorn.service /etc/systemd/system/celery.service
+systemctl daemon-reload
