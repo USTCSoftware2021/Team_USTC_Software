@@ -7,7 +7,7 @@ However we also want to preserve the git log during development, so we include t
 
 You can simply deploy the frontend and backend together with `install.sh`. And it's recommanded to check the content of script before priviledged install.
 
-**This script works with the assumption of "frontend code in USTC2021-frontend folder, backend code in backend folder, so if not cloned recursively, remove the two empty folder and strip out the -judge suffix, then run the script.**
+**This script works with the assumption of "frontend code in USTC2021-frontend folder, backend code in backend folder", so if not cloned recursively, remove the two empty folder and strip out the -judge suffix, then run the script.**
 
 The script works like follows:
 
