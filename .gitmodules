@@ -1,0 +1,6 @@
+[submodule "USTC2021-frontend"]
+	path = USTC2021-frontend
+	url = git@github.com:USTCSoftware2021/USTC2021-frontend.git
+[submodule "backend"]
+	path = backend
+	url = git@github.com:USTCSoftware2021/backend.git
