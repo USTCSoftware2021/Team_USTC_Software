@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color:#DADADA;
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    z-index: -1;
+}
+.bar{
+    position: fixed;
+    display: flex;
+    flex-flow: row;
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+    z-index: 3;
+}
+.barword{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* .barword:hover{
+    background-color: red;
+    color: black;
+    cursor: pointer;
+} */
+.barblank{
+    flex-grow: 5;
+}
+.barword a{
+    display: block;
+    color: white;
+    text-decoration:none !important;
+    font-size: 20px;
+}
+.bar #history{
+    margin-right: 30px;
+}
+.bar img{
+    margin: 15px;
+    width: 100px;
+    height: 32px;
+}
+.box{
+    position: absolute;
+    width: 85vw;
+    height: 85vh;
+    left: 7.5vw;
+    top: 10vh;
+    background: #F9E2C4;
+    border: 8px solid #FF9E45;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px 209px rgba(74, 74, 74, 0.48), inset 0px 0px 12px rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    z-index: 0.5;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+}
+.box h3{
+
+    font-weight: bold;
+    font-family: Roboto;
+    color:  #FF9E45;
+    margin: 10px;
+}
+.box .text{
+    display: flex;
+    margin: 7%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.box .picture {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.box .picture img{
+    width: 10%;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* margin-top: 10%; */
+}
+
+.topside{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: 15vh;
+    padding-right: 30px;
+    align-items: center;
+}
+#close {
+    background-color: #FEE48A;
+    border-radius: 10px;
+    margin-top: 10px;
+    align-self: flex-start;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#close:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+.topblank {
+    flex-grow: 5;
+}

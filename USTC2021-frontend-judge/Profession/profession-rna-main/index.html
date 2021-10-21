@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' type='text/css' href='/styles/fornac.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- <div class="bar"> -->
+    <div class="bar">
+        <div class="barlogo">
+            <img src="/static/CAT-white.png"></img>
+        </div>
+        <div class="barword">
+            <a class="barworda" href="/Profession/profession-index/">Profession</a>
+        </div>
+        <div class="barword">
+            <a class="barworda" href="/Education/Intro/">Education</a>
+        </div>
+        <div class="barword">
+            <a class="barworda" href="/Profession/profession-rna/">RNA</a>
+        </div>
+        <div class="barblank"></div>
+        <div id="history" class="barword">
+            <a class="barworda" href="/Profession/profession-history/history.html">History</a>
+        </div>
+    </div>
+    <nav class="leftside">
+        <ul class="buttons" id="buttons">
+            <li class="li" onclick="sidebarClickHandler(event)">RNA Secondary Structure</li>
+        </ul>
+    </nav>
+    <div id="content">
+        <div id="RNA_secondary_structure" class="content">
+            <h1 class="model-title">RNA Secondary Structure</h1>
+            <p class="by">By IntelRNA</p>
+            <img class="waiting" src="/static/cat.gif" />
+            <div class="result">
+                <div id='rna_forna'> </div>
+            </div>
+            <div class="strentch"></div>
+            <div class="ref">
+                <p>Reference: </p>
+                <a class="ref-link">http://www.sjtufold.com/SoftApp/Array.html</a>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/scripts/fornac.js'></script>
+    <script src="/scripts/utils.js"></script>
+    <script src="main.js"></script>
+</body>
+<!-- name from four models -->
+
+</html>

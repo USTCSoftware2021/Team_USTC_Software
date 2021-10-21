@@ -1,0 +1,89 @@
+/* paste from Profession */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f1ede1 !important;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    z-index: -1;
+    background-image: url(/static/jigsawbackground.svg);
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.bar {
+    position: fixed;
+    display: flex;
+    flex-flow: row;
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+    z-index: 10;
+}
+
+.barword {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.barblank {
+    flex-grow: 5;
+}
+
+.barword a {
+    display: block;
+    color: white;
+    text-decoration: none !important;
+    font-size: 20px;
+}
+
+.bar #history {
+    margin-right: 30px;
+}
+
+.bar img {
+    margin: 15px;
+    width: 100px;
+    height: 32px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: calc(60px + 10%);
+    justify-content: center;
+    align-items: center;
+}
+
+.content p {
+    color: #63C4B4;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 47px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+    width: 80%;
+}
+
+.content a {
+    color: #FFC700;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.logocat {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+}

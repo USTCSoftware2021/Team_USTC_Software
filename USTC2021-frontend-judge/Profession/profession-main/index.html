@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- <div class="bar"> -->
+    <div class="bar">
+        <div class="barlogo">
+            <img src="/static/CAT-white.png"></img>
+        </div>
+        <div class="barword">
+            <a class="barworda" href="/Profession/profession-index/">Profession</a>
+        </div>
+        <div class="barword">
+            <a class="barworda" href="/Education/Intro/">Education</a>
+        </div>
+        <div class="barword">
+            <a class="barworda" href="/Profession/profession-rna/">RNA</a>
+        </div>
+        <div class="barblank"></div>
+        <div id="history" class="barword">
+            <a class="barworda" href="/Profession/profession-history/history.html">History</a>
+        </div>
+    </div>
+    <nav class="leftside">
+        <ul class="buttons" id="buttons">
+            <li class="li" onclick="sidebarClickHandler(event)">Secondary Structure</li>
+            <li class="li" onclick="sidebarClickHandler(event)">Subcellular Localization</li>
+            <li class="li" onclick="sidebarClickHandler(event)">Transmembrane Topology</li>
+            <li class="li" onclick="sidebarClickHandler(event)">Isoelectric Point</li>
+        </ul>
+    </nav>
+    <div id="content">
+        <div id="secondary_structure" class="content">
+            <h1 class="model-title">Secondary Structure</h1>
+            <p class="by">By JPred</p>
+            <div class="result" hidden>
+                <div id="JPred">
+                    <!-- JPred fulfillment -->
+                </div>
+                <h2>Graph Explanation: </h2>
+                <div class="text-brace">
+                    <p><span class="head">Lupas_x: </span> <span class="major">indicates that the coiled coil regions of
+                            proteins is
+                            predicted by the Lupas algorithm, and x indicates that x amino acids are presented as a set
+                            of
+                            primitives (x = 14,21,18). </span>
+                    </p>
+                    <p class="minor">-: the probability of this region being a coiled coil is 50% and below <br />
+                        c: the probability of this region being a coiled coil is 50% to 90% <br />
+                        C: the probability of this region being a coiled coil is 90% and above</p>
+                    <p><span class="head">JNETCONF：</span> <span class="major">Indicates the confidence level of the
+                            prediction (0-9), The higher the value, the higher the confidence level and the more
+                            accurate the prediction is.</span></p>
+                    <p>
+                        <span class="head">JNETSOLX：</span> <span class="major">indicates the solvent accessibility, and
+                            x indicates the maximum probability of being exposed to the solvent (x = 0,5,25). Take
+                            JNETSOLX for example.</span>
+                    </p>
+                    <p class="minor">-: fragments with a maximum 25% probability of being exposed to the solvent
+                        (hydrophilic) <br />B: fragments with a maximum 25% probability of not being exposed
+                        (hydrophobic)</p>
+                    <p><span class="head">Jnetpred：</span> <span class="major"> secondary structure predicted
+                            with Jnet neural network, the green part is β-sheet, the red part is helix, and the rest is
+                            irregularly folded</span>
+                    </p>
+                    <p><span class="head">JNETHMM：</span> <span class="major">The secondary structure predicted
+                            by the implicit Markov (HMM) model, the results are the same as Jnetpred</span></p>
+                    <p><span class="head">JNETPSSM：</span> <span class="major">The secondary structure predicted by
+                            PSI-BLAST, the results are the same as Jnetpred</span></p>
+
+                </div>
+            </div>
+            <img class="waiting" src="/static/cat.gif" />
+            <div class="strentch"></div>
+            <div class="ref">
+                <p>Reference: </p>
+                <a class="ref-link">http://www.compbio.dundee.ac.uk/jpred4/index.html</a>
+            </div>
+        </div>
+        <div id="subcellular_localization" class="content">
+            <h1 class="model-title">Subcellular Localization</h1>
+            <p class="by">By Cell-PLoc 2.0</p>
+            <div class="choice">
+                <p target="prot_source">Choose the source of the protein sequence: </p>
+                <select id="prot_source" onchange="showUniqueCellPLoc()">
+                    <option value="">select the source</option>
+                    <option value="euk">eukaryotic</option>
+                    <option value="hum">human</option>
+                    <option value="plant">plant</option>
+                    <option value="gpos">Gram-positive</option>
+                    <option value="gneg">Gram-negative</option>
+                </select>
+            </div>
+            <div class="result" style="min-height: 0;">
+                <embed src="/static/plant_cell.svg" id="plant_cell" class="cell cell-hidden">
+                <embed src="/static/hum_cell.svg" id="hum_cell" class="cell cell-hidden">
+            </div>
+            <img class="waiting" src="/static/cat.gif" />
+            <div class="strentch"></div>
+            <div class="ref">
+                <p>Reference: </p>
+                <a class="ref-link">http://www.csbio.sjtu.edu.cn/bioinf/Cell-PLoc/</a>
+            </div>
+            <div id="CellPLoc_picture"></div>
+        </div>
+        <div id="transmembrane_topology" class="content">
+            <h1 class="model-title">Transmembrane Topology</h1>
+            <p class="by">By Biolib | DeepTMHMM</p>
+            <div class="result" hidden>
+                <div class="text-wrapper">
+                    <p id="topology" class="text"></p>
+                </div>
+                <div class="text-wrapper">
+                    <p id="statistic" class="text"></p>
+                </div>
+                <img id="topology_img" />
+            </div>
+            <img class="waiting" src="/static/cat.gif" />
+            <div class="strentch"></div>
+            <div class="ref">
+                <p>Reference: </p>
+                <a class="ref-link">https://biolib.com/DTU/DeepTMHMM</a>
+            </div>
+        </div>
+        <div id="isoelectric_point" class="content">
+            <h1 class="model-title">Isoelectric Point</h1>
+            <p class="by">By Isoelectric Point Calculator 2.0 </p>
+            <div class="result" hidden>
+                <div class="text-wrapper">
+                    <p>The isoelectric point of sequence is: <span id="isopoint"></span></p>
+                </div>
+            </div>
+            <img class="waiting" src="/static/cat.gif" />
+            <div class="strentch"></div>
+            <div class="ref">
+                <p>Reference: </p>
+                <a class="ref-link">http://ipc2.mimuw.edu.pl/</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/scripts/utils.js"></script>
+<script src="main.js"></script>
+<!-- name from four models -->
+
+</html>
